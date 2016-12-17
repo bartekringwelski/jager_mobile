@@ -1,0 +1,62 @@
+<!-- Add job form -->
+<div ng-show="openAddJobForm" class="container-fluid" ng-model="new" ng-submit="addJob()">
+  <form class="form-group">
+    <div class="row form-row">
+      <div class="col-lg-2">
+        <label for="company-name">Company Name</label>
+        <input type="text" class="form-control" id="company-name" ng-model="new.company" required>
+      </div>
+      <div class="col-lg-2">
+        <label for="job-title">Job Title</label>
+        <input type="text" class="form-control" id="job-title" ng-model="new.jobTitle">
+      </div>
+      <div class="col-lg-2">
+        <label for="job-location">Location</label>
+        <input type="text" class="form-control" id="job-location" ng-model="new.location">
+      </div>
+      <div class="col-lg-2">
+        <label for="link">Link to Posting</label>
+        <input type="text" class="form-control" id="link" ng-model="new.jobLink">
+      </div>
+      <div class="col-lg-2">
+        <label for="interest-level">Interest Level</label>
+        <select class="form-control" id="interest-level" ng-init="new.interestLevel = new.interestLevel || interestLevels[0].value"
+          ng-model="new.interestLevel" ng-options="level.value as level.value for level in interestLevels">
+        </select>
+      </div>
+      <div class="col-lg-2">
+        <label for="status">Application Status</label>
+        <select class="form-control" id="status" ng-model="new.status" ng-init="new.status = new.status || statuses[0].value"
+        ng-options="status.value as status.text for status in statuses">
+        </select>
+      </div>
+    </div> <!-- row --> <br>
+    <div class="row form-row">
+      <div class="col-lg-2">
+        <label for="contact-person">Contact Person</label>
+        <input type="text" class="form-control" id="contact-person" ng-model="new.contactPerson">
+      </div>
+      <div class="col-lg-2">
+        <label for="contact-info">Contact Information</label>
+        <input type="text" class="form-control" id="contact-info" ng-model="new.contactInfo">
+      </div>
+      <div class="col-lg-2">
+        <label for="date">Date Advertised</label>
+        <input type="date" class="form-control" id="date" ng-model="new.age">
+      </div>
+      <div class="col-lg-3">
+        <label for="date">Job Description/Requirements</label>
+        <textarea class="form-control" id="date" ng-model="new.description"/>
+      </div>
+      <div class="col-lg-3">
+        <label for="date">Additional Notes</label>
+        <textarea class="form-control" id="date" ng-model="new.notes"/>
+      </div>
+    </div> <!-- row --> <br>
+    <div class="row">
+      <div class="col-lg-2 col-lg-offset-8">
+        <button class="btn btn-default" type="submit" ng-click="openAddJobForm = !openAddJobForm">Add to My Job List</button>
+      </div>
+    </div> <!-- row -->
+  </form>
+</div>
